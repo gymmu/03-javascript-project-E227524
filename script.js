@@ -66,3 +66,23 @@ export function aufgabe05(args) {
   }
   return false
 }
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (48 <= ascii && ascii<= 56) {
+      
+    } else if (65 <= ascii && ascii<= 90) {
+      
+    } else if (97 <= ascii && ascii<= 122) {
+      
+    } else if (32 === ascii) {
+      
+    } else {
+      return true
+    }
+  }
+  return false
+}
