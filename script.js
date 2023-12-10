@@ -127,3 +127,25 @@ export function aufgabe09 (args) {
   if(input.length <= 6 || 6 <= input.length) return false
  
 }
+ 
+export function aufgabe10 (args) {
+  const input = args
+  
+  if(input.length !== 7) return false
+  if(input[0] !== "#") return false
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+ 
+    if(48 <= ascii && ascii <=57) {
+      //Ist eine Ziffer
+    } else if (65 <= ascii && ascii <= 70) {
+      //Ist A-F
+    } else {
+      return false
+    }
+  }
+ 
+  return true
+}
+ 
