@@ -169,3 +169,18 @@ export function aufgabe12 (args) {
   return -1
 }
  
+export function aufgabe13 (args) {
+  const input = args
+  let latestE = -1
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+ 
+    if (currentElement == "e") {
+      latestE = i
+    }
+  }
+  return latestE
+ 
+}
+ 
