@@ -148,4 +148,11 @@ export function aufgabe10 (args) {
  
   return true
 }
+
+export function aufgabe11 (args) {
+  const input = args
+  
+  if(input.length !== 1) return null
+  return input[0].charCodeAt(0)
+}
  
