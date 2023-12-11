@@ -199,4 +199,30 @@ export function aufgabe14 (args) {
   if (count == input.length) return(2)
   else return(-1)
 }
+
+export function aufgabe15 (args) {
+  const input = args
+  const result = []
+ 
+  if (input.lastIndexOf(' ') == input.length - 1) {
+      for (let i = 0; i < input.length - 1; i++) {
+        const currentElement = input[i]
+        result.push(currentElement)
+      }
+  } else {
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+  
+      if (currentElement !== " ") {
+        result.push(currentElement)
+      } else {
+        return result.join("")
+      }
+    }
+ 
+  }
+ 
+  return result.join("")
+}
+ 
  
