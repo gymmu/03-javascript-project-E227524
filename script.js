@@ -1,3 +1,4 @@
+
 export function aufgabe01(args) {
   const input = args
   const result = []
@@ -13,6 +14,7 @@ export function aufgabe01(args) {
   }
   return result.join("")
 }
+// löscht alle e aus dem Text
 export function aufgabe02 (args) {
   const input = args
   const result = []
@@ -23,6 +25,7 @@ export function aufgabe02 (args) {
   }
   return result.join("")
 }
+// gibt an wie viele e sich im Text befinden
 export function aufgabe03 (args) {
   const input = args
   const result = []
@@ -37,6 +40,7 @@ export function aufgabe03 (args) {
   }
   return countE
 }
+// Zählt die Anzahl von Wörter im Text
 export function aufgabe04 (args) {
   let input = args
   const result = []
@@ -53,6 +57,7 @@ export function aufgabe04 (args) {
   }
   return countW
 }
+ //testet ob es ein Großbuchstabe gibt
 export function aufgabe05(args) {
   const input = args
   const result = []
@@ -66,6 +71,7 @@ export function aufgabe05(args) {
   }
   return false
 }
+ //ignoriert, wenn ein Punkt steht.
 export function aufgabe06(args) {
   const input = args
   const result = []
@@ -86,6 +92,7 @@ export function aufgabe06(args) {
   }
   return false
 }
+//gibt mir den ascii wert von currentelement
 export function aufgabe07(args) {
   const input = args
   const result = []
@@ -104,6 +111,7 @@ export function aufgabe07(args) {
   return false
 
 }
+ //macht aus e ein s
 export function aufgabe08(args) {
   const input = args        
   const result = []                     
@@ -119,7 +127,7 @@ export function aufgabe08(args) {
   }
   return result.join("")                                        
 }
-
+// testet ob die Eingabe gneaz sechs Zeichen lang ist 
 export function aufgabe09 (args) {
   const input = args
   
@@ -127,7 +135,7 @@ export function aufgabe09 (args) {
   if(input.length <= 6 || 6 <= input.length) return false
  
 }
- 
+ // testet ob die Funktion ein korrekter Hexcode ist
 export function aufgabe10 (args) {
   const input = args
   
@@ -148,7 +156,7 @@ export function aufgabe10 (args) {
  
   return true
 }
-
+  //sucht nach der Position des aller ersten e
 export function aufgabe11 (args) {
   const input = args
   
@@ -168,7 +176,7 @@ export function aufgabe12 (args) {
   }
   return -1
 }
- 
+// es sucht nach dem letzten e in der Reihenfolge
 export function aufgabe13 (args) {
   const input = args
   let latestE = -1
@@ -183,7 +191,7 @@ export function aufgabe13 (args) {
   return latestE
  
 }
- 
+ //die Position des dritten e wird bestimmt
 export function aufgabe14 (args) {
   const input = args
   let count = 0
@@ -199,7 +207,7 @@ export function aufgabe14 (args) {
   if (count == input.length) return(2)
   else return(-1)
 }
-
+//es sucht nach dem ersten leerzeichen
 export function aufgabe15 (args) {
   const input = args
   const result = []
@@ -224,7 +232,7 @@ export function aufgabe15 (args) {
  
   return result.join("")
 }
- 
+  //trennt es in zwei listen die erste endet wenn dieses Zeichen kommt$
 export function aufgabe16 (args) {
   const input = args
   const result1 = []
@@ -250,5 +258,58 @@ export function aufgabe16 (args) {
   } else {
     return result1.join("")
   }
+}
+
+
+export function aufgabe18 (args) {
+  const input = args
+  const inputName = []
+  const inputAge = []
+  let readText = true
+ 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+    if (currentElement === " " && readText !== false) {
+      readText = false
+    } else {
+      if (readText === true) {
+        inputName.push(currentElement)
+      }
+      else if (readText === false) {
+        inputAge.push(currentElement)
+      }
+    }
+  }
+  if (inputName.join("") !== "" && inputAge.join("") !== "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
+  if (inputName.join("") == "" && inputAge.join("") !== "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + " Jahre alt"
+  if (inputName.join("") !== "" && inputAge.join("") == "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+  if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
+}
+
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  result.push(currentElement)
+  result.push(currentElement)
+}
+ 
+  return result.join("")
+}
+
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if(currentElement == "." && input[i+1] !== " ") return false
+    else if(currentElement == "." && input[i+1] == " ") return true
+  }
+ 
+  return result.join("") 
 }
  
