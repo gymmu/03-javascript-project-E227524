@@ -268,7 +268,7 @@ export function aufgabe17 (args) {
   }
   phrases.push(currentPhrase.join(""))
   return phrases
-
+}
 
 export function aufgabe18 (args) {
   const input = args
@@ -295,4 +295,16 @@ export function aufgabe18 (args) {
   if (inputName.join("") !== "" && inputAge.join("") == "") return "Sie heissen " + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
   if (inputName.join("") == "" && inputAge.join("") == "") return "Sie heissen" + inputName.join("") + " und sind " + inputAge.join("") + "Jahre alt"
 }
+
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  result.push(currentElement)
+  result.push(currentElement)
+}
  
+  return result.join("")
+} 
