@@ -1,4 +1,4 @@
-
+// löscht alle e aus dem Text
 export function aufgabe01(args) {
   const input = args
   const result = []
@@ -14,7 +14,7 @@ export function aufgabe01(args) {
   }
   return result.join("")
 }
-// löscht alle e aus dem Text
+//gibt im Text den Grossbuchstaben an
 export function aufgabe02 (args) {
   const input = args
   const result = []
@@ -57,12 +57,13 @@ export function aufgabe04 (args) {
   }
   return countW
 }
- //testet ob es ein Großbuchstabe gibt
+ //testet ob es ein Grossbuchstabe gibt
 export function aufgabe05(args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    //ist ein Buchstabe
     if ( 91 > currentElement.charCodeAt(0) && currentElement.charCodeAt(0) > 64) {
       return true
     } else {
@@ -71,9 +72,9 @@ export function aufgabe05(args) {
   }
   return false
 }
- //ignoriert, wenn ein Punkt steht.
+ //testet ob ein Sonderzeichen steht
 export function aufgabe06(args) {
-  const input = args
+  const input = args 
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -329,4 +330,22 @@ export function aufgabe20(args) {
  
   return result.join("") 
 }
- 
+
+export function bubbleSort (args) {
+
+const text = args
+const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+for (let i = 0; i < list.length - 1; i++) {
+  const currentElement = list[i]
+  const nextElement = list[i + 1]
+  if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+    // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+    const tmp = list[i + 1]
+    list[i + 1] = list[i]
+    list[i] = tmp
+    i = -1 // starte von vorne wenn etwas vertauscht wurde.
+  }
+}
+const result = list.join("")
+return result
+}
