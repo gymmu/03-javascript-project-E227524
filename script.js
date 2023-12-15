@@ -93,7 +93,7 @@ export function aufgabe06(args) {
   }
   return false
 }
-//gibt mir den ascii wert von currentelement
+//gibt an ob das Wort im Text vorkommt
 export function aufgabe07(args) {
   const input = args
   const result = []
@@ -128,7 +128,7 @@ export function aufgabe08(args) {
   }
   return result.join("")                                        
 }
-// testet ob die Eingabe gneaz sechs Zeichen lang ist 
+// testet ob die Eingabe genau sechs Zeichen lang ist 
 export function aufgabe09 (args) {
   const input = args
   
@@ -157,14 +157,14 @@ export function aufgabe10 (args) {
  
   return true
 }
-  //sucht nach der Position des aller ersten e
+ //der ascii code eines einzelnen Buchstaben wird angegeben
 export function aufgabe11 (args) {
   const input = args
   
   if(input.length !== 1) return null
   return input[0].charCodeAt(0)
 }
-
+ //sucht nach der Position des aller ersten e
 export function aufgabe12 (args) {
   const input = args
   
@@ -208,7 +208,7 @@ export function aufgabe14 (args) {
   if (count == input.length) return(2)
   else return(-1)
 }
-//es sucht nach dem ersten leerzeichen
+//es sucht nach dem ersten leerzeichen und liest nur bis dort ab
 export function aufgabe15 (args) {
   const input = args
   const result = []
@@ -233,7 +233,7 @@ export function aufgabe15 (args) {
  
   return result.join("")
 }
-  //trennt es in zwei listen die erste endet wenn dieses Zeichen kommt$
+  //trennt es in zwei listen die erste endet wenn dieses Zeichen kommt=$
 export function aufgabe16 (args) {
   const input = args
   const result1 = []
@@ -332,7 +332,6 @@ export function aufgabe20(args) {
 }
 
 export function bubbleSort (args) {
-
 const text = args
 const list = text.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
 for (let i = 0; i < list.length - 1; i++) {
@@ -348,4 +347,16 @@ for (let i = 0; i < list.length - 1; i++) {
 }
 const result = list.join("")
 return result
+}
+//testet ob die Eingabe eine Zahl ist
+export function aufgabe27 (args) {
+  const input = args
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i].charCodeAt(0)
+    
+    if (input.length == 0) return false
+    if (47 >= currentElement || currentElement >= 58) return false
+  }
+  return true
 }
